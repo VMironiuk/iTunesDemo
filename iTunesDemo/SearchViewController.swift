@@ -62,8 +62,8 @@ extension SearchViewController: UISearchBarDelegate {
         }
         
         termToSearch = termToSearch.replacingOccurrences(of: " ", with: "+")
-        networkManager.request("\(baseURL)\(termToSearch)") { [weak self] response in
-            debugPrint(response)
+        networkManager.request("\(baseURL)\(termToSearch)",
+                               of: ItunesResponse.self) { [weak self] response in
             self?.itunesResponse = response.value
             self?.tableView.reloadData()
         }

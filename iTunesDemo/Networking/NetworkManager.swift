@@ -12,9 +12,10 @@ class NetworkManager {
     
     // MARK: - Public
     
-    func request(_ ulrConvertible: URLConvertible,
-                 completion: @escaping (DataResponse<ItunesResponse, AFError>) -> Void) {
-        AF.request(ulrConvertible).responseDecodable(of: ItunesResponse.self) { response in
+    func request<T: Decodable>(_ ulrConvertible: URLConvertible,
+                               of type: T.Type,
+                               completion: @escaping (DataResponse<T, AFError>) -> Void) {
+        AF.request(ulrConvertible).responseDecodable(of: T.self) { response in
             completion(response)
         }
     }
