@@ -11,9 +11,13 @@ class SearchViewController: UITableViewController {
     
     // MARK: - Properties
     
+    private let baseURL = "https://itunes.apple.com/search?media=music&entity=song&term="
+    
+    private let networkManager = NetworkManager()
+    
     private var searchBar: UISearchBar!
     
-    private var searchResults = [SearchResult]()
+    private var itunesResponse: ItunesResponse?
 
     // MARK: - Lifecycle
     
@@ -38,12 +42,12 @@ class SearchViewController: UITableViewController {
 extension SearchViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        searchResults.count
+        itunesResponse?.results.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ResultCell
-        cell.config(with: searchResults[indexPath.row])
+        cell.config(with: itunesResponse?.results[indexPath.row])
         return cell
     }
 }
@@ -53,34 +57,20 @@ extension SearchViewController {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchResults = search()
-        tableView.reloadData()
+        guard var termToSearch = searchBar.text else {
+            return
+        }
+        
+        termToSearch = termToSearch.replacingOccurrences(of: " ", with: "+")
+        networkManager.request("\(baseURL)\(termToSearch)") { [weak self] response in
+            debugPrint(response)
+            self?.itunesResponse = response.value
+            self?.tableView.reloadData()
+        }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         searchBar.resignFirstResponder()
-    }
-}
-
-// MARK: - Searching (Temporary)
-
-extension SearchViewController {
-    
-    private func search() -> [SearchResult] {
-        return [
-            SearchResult(artist: "R.E.M.",
-                         album: "In Time: The Best of R.E.M. 1988-2003",
-                         track: "Losing My Religion",
-                         artwork: UIImage(systemName: "guitars")),
-            SearchResult(artist: "R.E.M.",
-                         album: "Document",
-                         track: "It's the End of the World As We Know It (And I Feel Fine)",
-                         artwork: UIImage(systemName: "guitars")),
-            SearchResult(artist: "R.E.M.",
-                         album: "In Time: The Best of R.E.M. 1988-2003",
-                         track: "Everybody Hurts",
-                         artwork: UIImage(systemName: "guitars"))
-        ]
     }
 }

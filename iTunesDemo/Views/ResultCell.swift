@@ -18,10 +18,9 @@ class ResultCell: UITableViewCell {
     
     // MARK: - Public
     
-    func config(with searchResult: SearchResult) {
-        artwork.image = searchResult.artwork
-        artistLabel.text = searchResult.artist
-        albumLabel.text = searchResult.album
-        trackLabel.text = searchResult.track
+    func config(with searchResult: ItunesResult?) {
+        artistLabel.text = searchResult?.artistName
+        albumLabel.text = searchResult?.collectionName
+        trackLabel.text = searchResult?.trackName
     }
 }
