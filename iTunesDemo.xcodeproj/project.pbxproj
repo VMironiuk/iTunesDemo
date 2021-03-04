@@ -132,13 +132,11 @@
 				3CFB231725EFBE9400D9B84E /* Networking */,
 				3C9B979925EE1F78005AA26E /* Models */,
 				3C9B97A225EE2997005AA26E /* Views */,
+				3C9D5DAF25F131FB00DE4493 /* Controllers */,
+				3C9D5DB325F1328000DE4493 /* Storyboards */,
 				3C00770025ED33880045A523 /* AppDelegate.swift */,
 				3C00770225ED33880045A523 /* SceneDelegate.swift */,
-				3C00770425ED33880045A523 /* SearchViewController.swift */,
-				3C9D5DA525F0ED1D00DE4493 /* DetailsViewController.swift */,
-				3C00770625ED33880045A523 /* Main.storyboard */,
 				3C00770925ED338A0045A523 /* Assets.xcassets */,
-				3C00770B25ED338A0045A523 /* LaunchScreen.storyboard */,
 				3C00770E25ED338A0045A523 /* Info.plist */,
 			);
 			path = iTunesDemo;
@@ -185,6 +183,24 @@
 				3C9D5DAA25F0F7C200DE4493 /* UIViewController+ShowErrorAlert.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3C9D5DAF25F131FB00DE4493 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3C00770425ED33880045A523 /* SearchViewController.swift */,
+				3C9D5DA525F0ED1D00DE4493 /* DetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3C9D5DB325F1328000DE4493 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3C00770625ED33880045A523 /* Main.storyboard */,
+				3C00770B25ED338A0045A523 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		3CFB231725EFBE9400D9B84E /* Networking */ = {
