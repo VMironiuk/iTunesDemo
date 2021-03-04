@@ -11,13 +11,17 @@ class SearchViewController: UITableViewController {
     
     // MARK: - Properties
     
-    private let baseURL = "https://itunes.apple.com/search?media=music&entity=song&term="
+    private let baseURL = "https://itunes.apple.com/search?"
     
     private let networkManager = NetworkManager()
     
     private var searchBar: UISearchBar!
     
     private var itunesResponse: ItunesResponse?
+    
+    private var urlParameters: [String : String] {
+        ["media" : "music", "entity" : "song", "term" : "\(searchBar.text ?? "")"]
+    }
 
     // MARK: - Lifecycle
     
@@ -57,13 +61,9 @@ extension SearchViewController {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard var termToSearch = searchBar.text else {
-            return
-        }
-        
-        termToSearch = termToSearch.replacingOccurrences(of: " ", with: "+")
-        networkManager.request("\(baseURL)\(termToSearch)",
-                               of: ItunesResponse.self) { [weak self] response in
+        networkManager.request(baseURL,
+                               of: ItunesResponse.self,
+                               parameters: urlParameters) { [weak self] response in
             self?.itunesResponse = response.value
             self?.tableView.reloadData()
         }
