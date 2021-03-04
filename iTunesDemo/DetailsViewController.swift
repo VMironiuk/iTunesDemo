@@ -14,6 +14,9 @@ class DetailsViewController: UIViewController {
     @IBOutlet private weak var artistLabel: UILabel!
     @IBOutlet private weak var albumLabel: UILabel!
     @IBOutlet private weak var trackLabel: UILabel!
+    @IBOutlet private weak var artworkImageView: UIImageView!
+    
+    private let networkManager = NetworkManager()
     
     var iTunesResult: ItunesResult?
     
@@ -34,5 +37,13 @@ class DetailsViewController: UIViewController {
         artistLabel.text = iTunesResult.artistName
         albumLabel.text = iTunesResult.collectionName
         trackLabel.text = iTunesResult.trackName
+        networkManager.request(iTunesResult.artworkMiniature) { [weak self] response in
+            switch response.result {
+            case .success(let data):
+                self?.artworkImageView.image = UIImage(data: data)
+            case .failure(let error):
+                self?.showError(with: "Cannot fetch artwork: \(error.localizedDescription)")
+            }
+        }
     }
 }

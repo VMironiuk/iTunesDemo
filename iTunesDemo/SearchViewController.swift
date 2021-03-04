@@ -51,11 +51,6 @@ class SearchViewController: UITableViewController {
         searchBar.delegate = self
     }
     
-    private func showError(with message: String) {
-        let alert = UIAlertController.errorAlert(with: message)
-        present(alert, animated: true, completion: nil)
-    }
-    
     private func configCell(_ cell: ResultCell, with iTunesResult: ItunesResult?) {
         guard let iTunesResult = iTunesResult else {
             return
