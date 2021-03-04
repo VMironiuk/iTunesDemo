@@ -20,4 +20,11 @@ class NetworkManager {
             completion(response)
         }
     }
+    
+    func request(_ urlConvertible: URLConvertible,
+                 completion: @escaping (AFDataResponse<Data>) -> Void) {
+        AF.request(urlConvertible).responseData { response in
+            completion(response)
+        }
+    }
 }

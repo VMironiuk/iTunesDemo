@@ -24,6 +24,6 @@ struct ItunesResult: Decodable {
         case artistName
         case collectionName
         case trackName
-        case artworkMiniature = "artworkUrl30"
+        case artworkMiniature = "artworkUrl100"
     }
 }

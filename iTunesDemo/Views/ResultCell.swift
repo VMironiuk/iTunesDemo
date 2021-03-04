@@ -23,4 +23,8 @@ class ResultCell: UITableViewCell {
         albumLabel.text = searchResult?.collectionName
         trackLabel.text = searchResult?.trackName
     }
+    
+    func displayImage(_ image: UIImage?) {
+        artwork.image = image
+    }
 }

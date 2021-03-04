@@ -44,6 +44,24 @@ class SearchViewController: UITableViewController {
         let alert = UIAlertController.errorAlert(with: message)
         present(alert, animated: true, completion: nil)
     }
+    
+    private func configCell(_ cell: ResultCell, with iTunesResult: ItunesResult?) {
+        guard let iTunesResult = iTunesResult else {
+            return
+        }
+        
+        cell.config(with: iTunesResult)
+        networkManager.request(iTunesResult.artworkMiniature) { [weak self] response in
+            switch response.result {
+            case .success(let data):
+                if let image = UIImage(data: data) {
+                    cell.displayImage(image)
+                }
+            case .failure(let error):
+                self?.showError(with: error.localizedDescription)
+            }
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -56,7 +74,7 @@ extension SearchViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ResultCell
-        cell.config(with: itunesResponse?.results[indexPath.row])
+        configCell(cell, with: itunesResponse?.results[indexPath.row])
         return cell
     }
 }
