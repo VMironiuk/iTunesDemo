@@ -11,6 +11,8 @@ class SearchViewController: UITableViewController {
     
     // MARK: - Properties
     
+    private let detailsSegueIdentifier = "DetailsView"
+    
     private let baseURL = "https://itunes.apple.com/search?"
     
     private let networkManager = NetworkManager()
@@ -18,6 +20,8 @@ class SearchViewController: UITableViewController {
     private var searchBar: UISearchBar!
     
     private var itunesResponse: ItunesResponse?
+    
+    private var selectedItunesResult: ItunesResult?
     
     private var urlParameters: [String : String] {
         ["media" : "music", "entity" : "song", "term" : "\(searchBar.text ?? "")"]
@@ -28,6 +32,13 @@ class SearchViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == detailsSegueIdentifier {
+            let detailsVC = segue.destination as! DetailsViewController
+            detailsVC.iTunesResult = selectedItunesResult
+        }
     }
     
     // MARK: - Private
@@ -76,6 +87,17 @@ extension SearchViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ResultCell
         configCell(cell, with: itunesResponse?.results[indexPath.row])
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension SearchViewController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        selectedItunesResult = itunesResponse?.results[indexPath.row]
+        performSegue(withIdentifier: detailsSegueIdentifier, sender: self)
     }
 }
 
