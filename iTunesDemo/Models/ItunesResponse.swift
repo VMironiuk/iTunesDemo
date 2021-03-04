@@ -17,13 +17,13 @@ struct ItunesResult: Decodable {
     let artistName: String
     let collectionName: String
     let trackName: String
-    let artworkMiniature: String
+    let artwork: String
     
     enum CodingKeys: String, CodingKey {
         
         case artistName
         case collectionName
         case trackName
-        case artworkMiniature = "artworkUrl100"
+        case artwork = "artworkUrl100"
     }
 }

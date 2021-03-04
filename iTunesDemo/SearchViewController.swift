@@ -57,7 +57,7 @@ class SearchViewController: UITableViewController {
         }
         
         cell.config(with: iTunesResult)
-        networkManager.request(iTunesResult.artworkMiniature) { [weak self] response in
+        networkManager.request(iTunesResult.artwork) { [weak self] response in
             switch response.result {
             case .success(let data):
                 if let image = UIImage(data: data) {

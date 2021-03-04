@@ -37,7 +37,7 @@ class DetailsViewController: UIViewController {
         artistLabel.text = iTunesResult.artistName
         albumLabel.text = iTunesResult.collectionName
         trackLabel.text = iTunesResult.trackName
-        networkManager.request(iTunesResult.artworkMiniature) { [weak self] response in
+        networkManager.request(iTunesResult.artwork) { [weak self] response in
             switch response.result {
             case .success(let data):
                 self?.artworkImageView.image = UIImage(data: data)
