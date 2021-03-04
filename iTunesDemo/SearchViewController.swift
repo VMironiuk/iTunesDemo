@@ -39,6 +39,11 @@ class SearchViewController: UITableViewController {
         searchBar.showsCancelButton = true
         searchBar.delegate = self
     }
+    
+    private func showError(with message: String) {
+        let alert = UIAlertController.errorAlert(with: message)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -64,8 +69,13 @@ extension SearchViewController: UISearchBarDelegate {
         networkManager.request(baseURL,
                                of: ItunesResponse.self,
                                parameters: urlParameters) { [weak self] response in
-            self?.itunesResponse = response.value
-            self?.tableView.reloadData()
+            switch response.result {
+            case .success(let iTunesResponse):
+                self?.itunesResponse = iTunesResponse
+                self?.tableView.reloadData()
+            case .failure(let error):
+                self?.showError(with: error.localizedDescription)
+            }
         }
     }
     
