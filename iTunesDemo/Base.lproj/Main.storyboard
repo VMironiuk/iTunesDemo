@@ -115,6 +115,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kGo-La-iwe">
                                 <rect key="frame" x="20" y="108" width="374" height="313.5"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tuz-0V-Zcr">
+                                <rect key="frame" x="180.5" y="562.5" width="53" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Listen"/>
+                                <connections>
+                                    <action selector="listenAction:" destination="J3D-lK-GVb" eventType="touchUpInside" id="hH4-H4-bH0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LzO-7F-S8h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -123,8 +131,10 @@
                             <constraint firstItem="zcq-9e-tpS" firstAttribute="leading" secondItem="LzO-7F-S8h" secondAttribute="leading" constant="20" id="4d2-J0-NKX"/>
                             <constraint firstItem="Oxe-U5-0j3" firstAttribute="top" secondItem="u5g-DY-mgt" secondAttribute="bottom" constant="8" id="5Hb-CC-xP9"/>
                             <constraint firstItem="LzO-7F-S8h" firstAttribute="trailing" secondItem="kGo-La-iwe" secondAttribute="trailing" constant="20" id="6rQ-s0-jhn"/>
+                            <constraint firstItem="Tuz-0V-Zcr" firstAttribute="centerX" secondItem="mge-iI-XZJ" secondAttribute="centerX" id="GHl-TY-m8J"/>
                             <constraint firstItem="kGo-La-iwe" firstAttribute="height" secondItem="mge-iI-XZJ" secondAttribute="height" multiplier="0.35" id="Mir-Sv-gLF"/>
                             <constraint firstItem="u5g-DY-mgt" firstAttribute="top" secondItem="kGo-La-iwe" secondAttribute="bottom" constant="32" id="RzF-QS-fRT"/>
+                            <constraint firstItem="Tuz-0V-Zcr" firstAttribute="top" secondItem="zcq-9e-tpS" secondAttribute="bottom" constant="16" id="ank-t8-jey"/>
                             <constraint firstItem="LzO-7F-S8h" firstAttribute="trailing" secondItem="Oxe-U5-0j3" secondAttribute="trailing" constant="20" id="cyh-cr-flc"/>
                             <constraint firstItem="Oxe-U5-0j3" firstAttribute="leading" secondItem="LzO-7F-S8h" secondAttribute="leading" constant="20" id="mrO-t0-yeE"/>
                             <constraint firstItem="kGo-La-iwe" firstAttribute="top" secondItem="LzO-7F-S8h" secondAttribute="top" constant="20" id="ndN-Sy-fYy"/>
@@ -139,6 +149,7 @@
                         <outlet property="albumLabel" destination="Oxe-U5-0j3" id="oVe-K8-mx8"/>
                         <outlet property="artistLabel" destination="u5g-DY-mgt" id="jfh-de-Vya"/>
                         <outlet property="artworkImageView" destination="kGo-La-iwe" id="Q6M-5F-h9a"/>
+                        <outlet property="listenButton" destination="Tuz-0V-Zcr" id="wF3-TJ-MQe"/>
                         <outlet property="trackLabel" destination="zcq-9e-tpS" id="gyr-F9-xX2"/>
                     </connections>
                 </viewController>

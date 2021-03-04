@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 class DetailsViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet private weak var albumLabel: UILabel!
     @IBOutlet private weak var trackLabel: UILabel!
     @IBOutlet private weak var artworkImageView: UIImageView!
+    @IBOutlet private weak var listenButton: UIButton!
     
     private let networkManager = NetworkManager()
     
@@ -25,6 +27,25 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func listenAction(_ sender: UIButton) {
+        guard let iTunesResult = iTunesResult else {
+            return
+        }
+        
+        listenButton.isEnabled = false
+        networkManager.download(iTunesResult.trackPreview) { [weak self] response in
+            self?.listenButton.isEnabled = true
+            switch response.result {
+            case .success(let fileURL):
+                self?.playTrack(trackUrl: fileURL)
+            case .failure(let error):
+                self?.showError(with: "Cannot download track: \(error.localizedDescription)")
+            }
+        }
     }
     
     // MARK: - Private
@@ -45,5 +66,12 @@ class DetailsViewController: UIViewController {
                 self?.showError(with: "Cannot fetch artwork: \(error.localizedDescription)")
             }
         }
+    }
+    
+    private func playTrack(trackUrl: URL) {
+        let playerController = AVPlayerViewController()
+        playerController.player = AVPlayer(url: trackUrl)
+        playerController.entersFullScreenWhenPlaybackBegins = true
+        present(playerController, animated: true, completion: nil)
     }
 }

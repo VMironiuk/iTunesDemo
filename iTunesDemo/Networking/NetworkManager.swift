@@ -10,6 +10,15 @@ import Alamofire
 
 class NetworkManager {
     
+    // MARK: - Properties
+    
+    private let destination: DownloadRequest.Destination = { _, _ in
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentsURL.appendingPathComponent("track.m4a")
+        
+        return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+    }
+    
     // MARK: - Public
     
     func request<Parameters: Encodable, T: Decodable>(_ urlConvertible: URLConvertible,
@@ -24,6 +33,13 @@ class NetworkManager {
     func request(_ urlConvertible: URLConvertible,
                  completion: @escaping (AFDataResponse<Data>) -> Void) {
         AF.request(urlConvertible).responseData { response in
+            completion(response)
+        }
+    }
+    
+    func download(_ urlConvertible: URLConvertible,
+                  completion: @escaping (AFDownloadResponse<URL>) -> Void) {
+        AF.download(urlConvertible, to: destination).responseURL { response in
             completion(response)
         }
     }
