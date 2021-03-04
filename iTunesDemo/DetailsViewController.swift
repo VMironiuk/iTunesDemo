@@ -20,6 +20,13 @@ class DetailsViewController: UIViewController {
     
     private let networkManager = NetworkManager()
     
+    private let trackDestination: NetworkManager.Destination = { _, _ in
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentsURL.appendingPathComponent("track.m4a")
+        
+        return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+    }
+    
     var iTunesResult: ItunesResult?
     
     // MARK: - Lifecycle
@@ -37,7 +44,9 @@ class DetailsViewController: UIViewController {
         }
         
         listenButton.isEnabled = false
-        networkManager.download(iTunesResult.trackPreview) { [weak self] response in
+        networkManager.download(iTunesResult.trackPreview, to: trackDestination) {
+            [weak self] response in
+            
             self?.listenButton.isEnabled = true
             switch response.result {
             case .success(let fileURL):
