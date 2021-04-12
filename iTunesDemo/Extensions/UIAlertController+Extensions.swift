@@ -1,10 +1,3 @@
-//
-//  UIAlertController+Extensions.swift
-//  iTunesDemo
-//
-//  Created by Vladimir Mironiuk on 04.03.2021.
-//
-
 import UIKit
 
 extension UIAlertController {

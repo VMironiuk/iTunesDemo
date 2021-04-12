@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  iTunesDemo
-//
-//  Created by Vladimir Mironiuk on 01.03.2021.
-//
-
 import UIKit
 
 class SearchViewController: UITableViewController {
