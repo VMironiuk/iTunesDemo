@@ -6,7 +6,7 @@ class SearchViewController: UITableViewController {
     
     private let detailsSegueIdentifier = "DetailsView"
     
-    private let baseURL = "https://itunes.apple.com/search?"
+    private let baseURL = UIApplication.shared.baseURL
     
     private let networkManager = NetworkManager()
     
