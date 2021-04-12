@@ -45,7 +45,8 @@ class DetailsViewController: UIViewController {
             case .success(let fileURL):
                 self?.playTrack(trackUrl: fileURL)
             case .failure(let error):
-                self?.showError(with: "Cannot download track: \(error.localizedDescription)")
+                self?.showError(with: R.string.localizable.detailsViewTrackLoadingErrorMessage(
+                                    error.localizedDescription))
             }
         }
     }
@@ -65,7 +66,8 @@ class DetailsViewController: UIViewController {
             case .success(let data):
                 self?.artworkImageView.image = UIImage(data: data)
             case .failure(let error):
-                self?.showError(with: "Cannot fetch artwork: \(error.localizedDescription)")
+                self?.showError(with: R.string.localizable.detailsViewArtworkLoadingErrorMessage(
+                                    error.localizedDescription))
             }
         }
     }

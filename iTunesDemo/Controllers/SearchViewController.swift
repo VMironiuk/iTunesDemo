@@ -1,10 +1,9 @@
 import UIKit
+import Rswift
 
 class SearchViewController: UITableViewController {
     
     // MARK: - Properties
-    
-    private let detailsSegueIdentifier = "DetailsView"
     
     private let baseURL = UIApplication.shared.baseURL
     
@@ -28,7 +27,7 @@ class SearchViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == detailsSegueIdentifier {
+        if segue.identifier == R.segue.searchViewController.detailsView.identifier {
             let detailsVC = segue.destination as! DetailsViewController
             detailsVC.iTunesResult = selectedItunesResult
         }
@@ -72,7 +71,8 @@ extension SearchViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ResultCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell.identifier,
+                                                 for: indexPath) as! ResultCell
         configCell(cell, with: itunesResponse?.results[indexPath.row])
         return cell
     }
@@ -85,7 +85,8 @@ extension SearchViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         selectedItunesResult = itunesResponse?.results[indexPath.row]
-        performSegue(withIdentifier: detailsSegueIdentifier, sender: self)
+        performSegue(withIdentifier: R.segue.searchViewController.detailsView.identifier,
+                     sender: self)
     }
 }
 

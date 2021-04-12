@@ -18,6 +18,7 @@
 		3C00772325ED338B0045A523 /* iTunesDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C00772225ED338B0045A523 /* iTunesDemoUITests.swift */; };
 		3C8EF7C426244F3B00A8DD24 /* UIApplication+Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8EF7C326244F3B00A8DD24 /* UIApplication+Configurations.swift */; };
 		3C8EF7E3262455C700A8DD24 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8EF7E2262455C700A8DD24 /* R.generated.swift */; };
+		3C8EF7F026245CBF00A8DD24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EF7EF26245CBF00A8DD24 /* Localizable.strings */; };
 		3C9B97A425EE29DC005AA26E /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9B97A325EE29DC005AA26E /* ResultCell.swift */; };
 		3C9D5DA125F0CAF100DE4493 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9D5DA025F0CAF100DE4493 /* UIAlertController+Extensions.swift */; };
 		3C9D5DA625F0ED1D00DE4493 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9D5DA525F0ED1D00DE4493 /* DetailsViewController.swift */; };
@@ -67,6 +68,7 @@
 		3C00772425ED338B0045A523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C8EF7C326244F3B00A8DD24 /* UIApplication+Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Configurations.swift"; sourceTree = "<group>"; };
 		3C8EF7E2262455C700A8DD24 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		3C8EF7EF26245CBF00A8DD24 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3C9B97A325EE29DC005AA26E /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		3C9D5DA025F0CAF100DE4493 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		3C9D5DA525F0ED1D00DE4493 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				3C00770025ED33880045A523 /* AppDelegate.swift */,
 				3C00770225ED33880045A523 /* SceneDelegate.swift */,
 				3C8EF7E2262455C700A8DD24 /* R.generated.swift */,
+				3C8EF7EF26245CBF00A8DD24 /* Localizable.strings */,
 				3C00770925ED338A0045A523 /* Assets.xcassets */,
 				3C00770E25ED338A0045A523 /* Info.plist */,
 			);
@@ -350,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C00770D25ED338A0045A523 /* LaunchScreen.storyboard in Resources */,
+				3C8EF7F026245CBF00A8DD24 /* Localizable.strings in Resources */,
 				3C00770A25ED338A0045A523 /* Assets.xcassets in Resources */,
 				3C00770825ED33880045A523 /* Main.storyboard in Resources */,
 			);

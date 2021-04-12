@@ -1,0 +1,10 @@
+// MARK: - General Action Titles
+
+"Error.Title" = "Error";
+"Ok.Title" = "OK";
+
+// MARK: - Error Messages
+
+"BaseURL.Loading.Error.Message" = "Cannot get base URL";
+"DetailsView.Track.Loading.Error.Message" = "Cannot download track: %@";
+"DetailsView.Artwork.Loading.Error.Message" = "Cannot download artwork: %@";
