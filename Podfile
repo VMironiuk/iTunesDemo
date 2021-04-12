@@ -7,6 +7,7 @@ target 'iTunesDemo' do
 
   # Pods for iTunesDemo
   pod 'Alamofire', '~> 5.2'
+  pod 'R.swift'
 
   target 'iTunesDemoTests' do
     inherit! :search_paths

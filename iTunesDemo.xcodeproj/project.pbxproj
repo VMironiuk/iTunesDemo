@@ -17,6 +17,7 @@
 		3C00771825ED338B0045A523 /* iTunesDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C00771725ED338B0045A523 /* iTunesDemoTests.swift */; };
 		3C00772325ED338B0045A523 /* iTunesDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C00772225ED338B0045A523 /* iTunesDemoUITests.swift */; };
 		3C8EF7C426244F3B00A8DD24 /* UIApplication+Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8EF7C326244F3B00A8DD24 /* UIApplication+Configurations.swift */; };
+		3C8EF7E3262455C700A8DD24 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8EF7E2262455C700A8DD24 /* R.generated.swift */; };
 		3C9B97A425EE29DC005AA26E /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9B97A325EE29DC005AA26E /* ResultCell.swift */; };
 		3C9D5DA125F0CAF100DE4493 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9D5DA025F0CAF100DE4493 /* UIAlertController+Extensions.swift */; };
 		3C9D5DA625F0ED1D00DE4493 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9D5DA525F0ED1D00DE4493 /* DetailsViewController.swift */; };
@@ -65,6 +66,7 @@
 		3C00772225ED338B0045A523 /* iTunesDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesDemoUITests.swift; sourceTree = "<group>"; };
 		3C00772425ED338B0045A523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C8EF7C326244F3B00A8DD24 /* UIApplication+Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Configurations.swift"; sourceTree = "<group>"; };
+		3C8EF7E2262455C700A8DD24 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		3C9B97A325EE29DC005AA26E /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		3C9D5DA025F0CAF100DE4493 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		3C9D5DA525F0ED1D00DE4493 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				3C9D5DB325F1328000DE4493 /* Storyboards */,
 				3C00770025ED33880045A523 /* AppDelegate.swift */,
 				3C00770225ED33880045A523 /* SceneDelegate.swift */,
+				3C8EF7E2262455C700A8DD24 /* R.generated.swift */,
 				3C00770925ED338A0045A523 /* Assets.xcassets */,
 				3C00770E25ED338A0045A523 /* Info.plist */,
 			);
@@ -245,6 +248,7 @@
 			buildConfigurationList = 3C00772725ED338B0045A523 /* Build configuration list for PBXNativeTarget "iTunesDemo" */;
 			buildPhases = (
 				48D117ADF701C807BBD883C9 /* [CP] Check Pods Manifest.lock */,
+				3C8EF7DE262454E500A8DD24 /* ShellScript */,
 				3C0076F925ED33880045A523 /* Sources */,
 				3C0076FA25ED33880045A523 /* Frameworks */,
 				3C0076FB25ED33880045A523 /* Resources */,
@@ -390,6 +394,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3C8EF7DE262454E500A8DD24 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		48D117ADF701C807BBD883C9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -484,6 +507,7 @@
 				3C8EF7C426244F3B00A8DD24 /* UIApplication+Configurations.swift in Sources */,
 				3C9D5DA125F0CAF100DE4493 /* UIAlertController+Extensions.swift in Sources */,
 				3CFB232125EFC98700D9B84E /* ItunesResponse.swift in Sources */,
+				3C8EF7E3262455C700A8DD24 /* R.generated.swift in Sources */,
 				3C00770325ED33880045A523 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
