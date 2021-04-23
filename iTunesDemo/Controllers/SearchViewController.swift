@@ -5,17 +5,9 @@ class SearchViewController: UITableViewController {
     
     // MARK: - Properties
     
-    private let baseURL = UIApplication.shared.baseURL
-    
-    private let networkManager = NetworkManager()
-    
     private var searchBar: UISearchBar!
-    
-    private var itunesResponse: ItunesResponse?
-    
-    private var urlParameters: [String : String] {
-        ["media" : "music", "entity" : "song", "term" : "\(searchBar.text ?? "")"]
-    }
+        
+    private lazy var presenter: SearchPresenter = SearchPresenter(view: self)
     
     var coordinator: (Coordinatable & SearchResultAction)?
 
@@ -40,16 +32,11 @@ class SearchViewController: UITableViewController {
         guard let iTunesResult = iTunesResult else {
             return
         }
-        
+
         cell.config(with: iTunesResult)
-        networkManager.request(iTunesResult.artwork) { [weak self] response in
-            switch response.result {
-            case .success(let data):
-                if let image = UIImage(data: data) {
-                    cell.displayImage(image)
-                }
-            case .failure(let error):
-                self?.showError(with: error.localizedDescription)
+        presenter.data(from: iTunesResult.artwork) { [weak cell] data in
+            if let data = data {
+                cell?.displayImage(UIImage(data: data))
             }
         }
     }
@@ -60,13 +47,13 @@ class SearchViewController: UITableViewController {
 extension SearchViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        itunesResponse?.results.count ?? 0
+        presenter.countOfResults()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell.identifier,
                                                  for: indexPath) as! ResultCell
-        configCell(cell, with: itunesResponse?.results[indexPath.row])
+        configCell(cell, with: presenter.results()[indexPath.row])
         return cell
     }
 }
@@ -77,7 +64,7 @@ extension SearchViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let selectedItunesResult = itunesResponse?.results[indexPath.row]
+        let selectedItunesResult = presenter.results()[indexPath.row]
         coordinator?.searchResultDidSelect(selectedItunesResult)
     }
 }
@@ -87,21 +74,24 @@ extension SearchViewController {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        networkManager.request(baseURL,
-                               of: ItunesResponse.self,
-                               parameters: urlParameters) { [weak self] response in
-            switch response.result {
-            case .success(let iTunesResponse):
-                self?.itunesResponse = iTunesResponse
-                self?.tableView.reloadData()
-            case .failure(let error):
-                self?.showError(with: error.localizedDescription)
-            }
-        }
+        presenter.searchTerm(searchBar.text ?? "")
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         searchBar.resignFirstResponder()
+    }
+}
+
+// MARK: - SearchPresenterView
+
+extension SearchViewController: SearchPresenterView {
+    
+    func refresh() {
+        tableView.reloadData()
+    }
+    
+    func showErrorMessage(_ message: String) {
+        showError(with: message)
     }
 }

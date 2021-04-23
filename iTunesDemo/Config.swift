@@ -1,9 +1,8 @@
-import UIKit
 import Rswift
 
-extension UIApplication {
+struct Config  {
     
-    var baseURL: String {
+    static var baseURL: String {
         guard let baseURL = Bundle.main.object(forInfoDictionaryKey: "BaseURL") as? String else {
             fatalError(R.string.localizable.baseURLLoadingErrorMessage())
         }

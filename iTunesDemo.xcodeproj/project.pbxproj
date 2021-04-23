@@ -29,7 +29,8 @@
 		3C2A5E4C2632CBB400B4E2F6 /* SearchFlowFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E4B2632CBB400B4E2F6 /* SearchFlowFactoryProtocol.swift */; };
 		3C2A5E512632CBD000B4E2F6 /* SearchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E502632CBD000B4E2F6 /* SearchFlowFactory.swift */; };
 		3C2A5E592632D1B800B4E2F6 /* UIViewController+Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E582632D1B800B4E2F6 /* UIViewController+Storyboarded.swift */; };
-		3C8EF7C426244F3B00A8DD24 /* UIApplication+Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8EF7C326244F3B00A8DD24 /* UIApplication+Configurations.swift */; };
+		3C2A5E612632FB9D00B4E2F6 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E602632FB9D00B4E2F6 /* SearchPresenter.swift */; };
+		3C2A5E662633002100B4E2F6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E652633002100B4E2F6 /* Config.swift */; };
 		3C8EF7E3262455C700A8DD24 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8EF7E2262455C700A8DD24 /* R.generated.swift */; };
 		3C8EF7F026245CBF00A8DD24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EF7EF26245CBF00A8DD24 /* Localizable.strings */; };
 		3C9B97A425EE29DC005AA26E /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9B97A325EE29DC005AA26E /* ResultCell.swift */; };
@@ -92,7 +93,8 @@
 		3C2A5E4B2632CBB400B4E2F6 /* SearchFlowFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlowFactoryProtocol.swift; sourceTree = "<group>"; };
 		3C2A5E502632CBD000B4E2F6 /* SearchFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlowFactory.swift; sourceTree = "<group>"; };
 		3C2A5E582632D1B800B4E2F6 /* UIViewController+Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboarded.swift"; sourceTree = "<group>"; };
-		3C8EF7C326244F3B00A8DD24 /* UIApplication+Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Configurations.swift"; sourceTree = "<group>"; };
+		3C2A5E602632FB9D00B4E2F6 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		3C2A5E652633002100B4E2F6 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		3C8EF7E2262455C700A8DD24 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		3C8EF7EF26245CBF00A8DD24 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3C9B97A325EE29DC005AA26E /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				3C00770025ED33880045A523 /* AppDelegate.swift */,
 				3C00770225ED33880045A523 /* SceneDelegate.swift */,
 				3C8EF7E2262455C700A8DD24 /* R.generated.swift */,
+				3C2A5E652633002100B4E2F6 /* Config.swift */,
 				3C8EF7EF26245CBF00A8DD24 /* Localizable.strings */,
 				3C00770925ED338A0045A523 /* Assets.xcassets */,
 				3C00770E25ED338A0045A523 /* Info.plist */,
@@ -258,7 +261,6 @@
 			children = (
 				3C9D5DA025F0CAF100DE4493 /* UIAlertController+Extensions.swift */,
 				3C9D5DAA25F0F7C200DE4493 /* UIViewController+ShowErrorAlert.swift */,
-				3C8EF7C326244F3B00A8DD24 /* UIApplication+Configurations.swift */,
 				3C2A5E292632C35F00B4E2F6 /* UIViewController+Presentable.swift */,
 				3C2A5E582632D1B800B4E2F6 /* UIViewController+Storyboarded.swift */,
 			);
@@ -270,6 +272,7 @@
 			children = (
 				3C00770425ED33880045A523 /* SearchViewController.swift */,
 				3C9D5DA525F0ED1D00DE4493 /* DetailsViewController.swift */,
+				3C2A5E602632FB9D00B4E2F6 /* SearchPresenter.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -580,17 +583,18 @@
 				3C00770125ED33880045A523 /* AppDelegate.swift in Sources */,
 				3C9D5DA625F0ED1D00DE4493 /* DetailsViewController.swift in Sources */,
 				3C2A5E4C2632CBB400B4E2F6 /* SearchFlowFactoryProtocol.swift in Sources */,
+				3C2A5E612632FB9D00B4E2F6 /* SearchPresenter.swift in Sources */,
 				3C2A5E0E2632BF1300B4E2F6 /* Coordinatable.swift in Sources */,
 				3C2A5E592632D1B800B4E2F6 /* UIViewController+Storyboarded.swift in Sources */,
 				3C2A5E382632C40900B4E2F6 /* CoordinatorsFactory.swift in Sources */,
 				3C2A5E202632C18C00B4E2F6 /* Router.swift in Sources */,
 				3C9B97A425EE29DC005AA26E /* ResultCell.swift in Sources */,
 				3C2A5E302632C3E100B4E2F6 /* CoordinatorsFactoryProtocol.swift in Sources */,
-				3C8EF7C426244F3B00A8DD24 /* UIApplication+Configurations.swift in Sources */,
 				3C2A5E3D2632C42500B4E2F6 /* AppCoordinator.swift in Sources */,
 				3C2A5E442632CB7700B4E2F6 /* SearchCoordinator.swift in Sources */,
 				3C9D5DA125F0CAF100DE4493 /* UIAlertController+Extensions.swift in Sources */,
 				3C2A5E2A2632C35F00B4E2F6 /* UIViewController+Presentable.swift in Sources */,
+				3C2A5E662633002100B4E2F6 /* Config.swift in Sources */,
 				3CFB232125EFC98700D9B84E /* ItunesResponse.swift in Sources */,
 				3C2A5E162632BFE300B4E2F6 /* Presentable.swift in Sources */,
 				3C8EF7E3262455C700A8DD24 /* R.generated.swift in Sources */,
