@@ -1,3 +1,5 @@
+import Rswift
+
 protocol SearchResultAction {
     
     func searchResultDidSelect(_ searchResult: ItunesResult?)
@@ -23,7 +25,7 @@ extension SearchCoordinator: Coordinatable {
     
     func start() {
         guard let searchVC = factory.makeSearchView() as? SearchViewController else {
-            fatalError("Cannot instantiate SearchViewController")
+            fatalError(R.string.localizable.searchViewInstantiationErrorMessage())
         }
         
         searchVC.coordinator = self
@@ -37,7 +39,7 @@ extension SearchCoordinator: SearchResultAction {
     
     func searchResultDidSelect(_ searchResult: ItunesResult?) {
         guard let trackDetailsVC = factory.makeTrackDetailsView() as? DetailsViewController else {
-            fatalError("Cannot instantiate DetailsViewController")
+            fatalError(R.string.localizable.detailsViewInstantiationErrorMessage())
         }
         
         trackDetailsVC.iTunesResult = searchResult

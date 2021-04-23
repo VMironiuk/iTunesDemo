@@ -3,7 +3,8 @@ import Rswift
 struct Config  {
     
     static var baseURL: String {
-        guard let baseURL = Bundle.main.object(forInfoDictionaryKey: "BaseURL") as? String else {
+        let baseUrlKey = R.string.localizable.baseURLKey()
+        guard let baseURL = Bundle.main.object(forInfoDictionaryKey: baseUrlKey) as? String else {
             fatalError(R.string.localizable.baseURLLoadingErrorMessage())
         }
         return baseURL

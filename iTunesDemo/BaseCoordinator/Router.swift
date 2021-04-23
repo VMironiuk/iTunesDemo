@@ -1,6 +1,6 @@
 import UIKit
 
-class Router {
+final class Router {
     
     // MARK: - Properties
     

@@ -8,3 +8,9 @@
 "BaseURL.Loading.Error.Message" = "Cannot get base URL";
 "DetailsView.Track.Loading.Error.Message" = "Cannot download track: %@";
 "DetailsView.Artwork.Loading.Error.Message" = "Cannot download artwork: %@";
+"SearchView.Instantiation.Error.Message" = "Cannot instantiate SearchViewController";
+"DetailsView.Instantiation.Error.Message" = "Cannot instantiate DetailsViewController";
+
+// MARK: - Custom Info.plist Keys
+
+"BaseURL.Key" = "BaseURL";

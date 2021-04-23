@@ -10,6 +10,12 @@ final class SearchPresenter {
     
     // MARK: - Properties
     
+    private let mediaKey = "media"
+    private let mediaValue = "music"
+    private let entityKey = "entity"
+    private let entityValue = "song"
+    private let termKey = "term"
+    
     private let baseURL = Config.baseURL
     
     private let networkManager = NetworkManager()
@@ -27,7 +33,7 @@ final class SearchPresenter {
     // MARK: - Public
     
     func searchTerm(_ term: String) {
-        let urlParameters = ["media" : "music", "entity" : "song", "term" : term]
+        let urlParameters = makeURLParameters(with: term)
         networkManager.request(baseURL,
                                of: ItunesResponse.self,
                                parameters: urlParameters) { [weak self] response in
@@ -58,5 +64,11 @@ final class SearchPresenter {
                 completion(nil)
             }
         }
+    }
+    
+    // MARK: - Private
+    
+    private func makeURLParameters(with term: String) -> [String : String] {
+        [mediaKey : mediaValue, entityKey : entityValue, termKey : term]
     }
 }
