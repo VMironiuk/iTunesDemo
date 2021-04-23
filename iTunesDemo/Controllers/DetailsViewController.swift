@@ -10,15 +10,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet private weak var trackLabel: UILabel!
     @IBOutlet private weak var artworkImageView: UIImageView!
     @IBOutlet private weak var listenButton: UIButton!
-    
-    private let networkManager = NetworkManager()
-    
-    private let trackDestination: NetworkManager.Destination = { _, _ in
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let fileURL = documentsURL.appendingPathComponent("track.m4a")
         
-        return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-    }
+    private lazy var presenter = DetailsPresenter(view: self)
     
     var iTunesResult: ItunesResult?
     
@@ -37,13 +30,11 @@ class DetailsViewController: UIViewController {
         }
         
         listenButton.isEnabled = false
-        networkManager.download(iTunesResult.trackPreview, to: trackDestination) {
-            [weak self] response in
-            
+        presenter.downloadTrack(from: iTunesResult.trackPreview) { [weak self] result in
             self?.listenButton.isEnabled = true
-            switch response.result {
-            case .success(let fileURL):
-                self?.playTrack(trackUrl: fileURL)
+            switch result {
+            case .success(let url):
+                self?.playTrack(trackUrl: url)
             case .failure(let error):
                 self?.showError(with: R.string.localizable.detailsViewTrackLoadingErrorMessage(
                                     error.localizedDescription))
@@ -61,11 +52,12 @@ class DetailsViewController: UIViewController {
         artistLabel.text = iTunesResult.artistName
         albumLabel.text = iTunesResult.collectionName
         trackLabel.text = iTunesResult.trackName
-        networkManager.request(iTunesResult.artwork) { [weak self] response in
-            switch response.result {
+        
+        presenter.data(from: iTunesResult.artwork) { [weak self] result in
+            switch result {
             case .success(let data):
                 self?.artworkImageView.image = UIImage(data: data)
-            case .failure(let error):
+            case .failurre(let error):
                 self?.showError(with: R.string.localizable.detailsViewArtworkLoadingErrorMessage(
                                     error.localizedDescription))
             }
@@ -79,3 +71,7 @@ class DetailsViewController: UIViewController {
         present(playerController, animated: true, completion: nil)
     }
 }
+
+// MARK: - DetailsPresenterView
+
+extension DetailsViewController: DetailsPresenterView {}
