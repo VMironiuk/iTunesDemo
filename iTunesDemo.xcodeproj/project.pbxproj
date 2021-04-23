@@ -16,6 +16,19 @@
 		3C00770D25ED338A0045A523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C00770B25ED338A0045A523 /* LaunchScreen.storyboard */; };
 		3C00771825ED338B0045A523 /* iTunesDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C00771725ED338B0045A523 /* iTunesDemoTests.swift */; };
 		3C00772325ED338B0045A523 /* iTunesDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C00772225ED338B0045A523 /* iTunesDemoUITests.swift */; };
+		3C2A5E0E2632BF1300B4E2F6 /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E0D2632BF1300B4E2F6 /* Coordinatable.swift */; };
+		3C2A5E162632BFE300B4E2F6 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E152632BFE300B4E2F6 /* Presentable.swift */; };
+		3C2A5E1B2632C11B00B4E2F6 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E1A2632C11B00B4E2F6 /* Routable.swift */; };
+		3C2A5E202632C18C00B4E2F6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E1F2632C18C00B4E2F6 /* Router.swift */; };
+		3C2A5E252632C24600B4E2F6 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E242632C24600B4E2F6 /* BaseCoordinator.swift */; };
+		3C2A5E2A2632C35F00B4E2F6 /* UIViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E292632C35F00B4E2F6 /* UIViewController+Presentable.swift */; };
+		3C2A5E302632C3E100B4E2F6 /* CoordinatorsFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E2F2632C3E100B4E2F6 /* CoordinatorsFactoryProtocol.swift */; };
+		3C2A5E382632C40900B4E2F6 /* CoordinatorsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E372632C40900B4E2F6 /* CoordinatorsFactory.swift */; };
+		3C2A5E3D2632C42500B4E2F6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E3C2632C42500B4E2F6 /* AppCoordinator.swift */; };
+		3C2A5E442632CB7700B4E2F6 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E432632CB7700B4E2F6 /* SearchCoordinator.swift */; };
+		3C2A5E4C2632CBB400B4E2F6 /* SearchFlowFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E4B2632CBB400B4E2F6 /* SearchFlowFactoryProtocol.swift */; };
+		3C2A5E512632CBD000B4E2F6 /* SearchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E502632CBD000B4E2F6 /* SearchFlowFactory.swift */; };
+		3C2A5E592632D1B800B4E2F6 /* UIViewController+Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A5E582632D1B800B4E2F6 /* UIViewController+Storyboarded.swift */; };
 		3C8EF7C426244F3B00A8DD24 /* UIApplication+Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8EF7C326244F3B00A8DD24 /* UIApplication+Configurations.swift */; };
 		3C8EF7E3262455C700A8DD24 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8EF7E2262455C700A8DD24 /* R.generated.swift */; };
 		3C8EF7F026245CBF00A8DD24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EF7EF26245CBF00A8DD24 /* Localizable.strings */; };
@@ -66,6 +79,19 @@
 		3C00771E25ED338B0045A523 /* iTunesDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C00772225ED338B0045A523 /* iTunesDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesDemoUITests.swift; sourceTree = "<group>"; };
 		3C00772425ED338B0045A523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C2A5E0D2632BF1300B4E2F6 /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
+		3C2A5E152632BFE300B4E2F6 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		3C2A5E1A2632C11B00B4E2F6 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		3C2A5E1F2632C18C00B4E2F6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		3C2A5E242632C24600B4E2F6 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		3C2A5E292632C35F00B4E2F6 /* UIViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Presentable.swift"; sourceTree = "<group>"; };
+		3C2A5E2F2632C3E100B4E2F6 /* CoordinatorsFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorsFactoryProtocol.swift; sourceTree = "<group>"; };
+		3C2A5E372632C40900B4E2F6 /* CoordinatorsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorsFactory.swift; sourceTree = "<group>"; };
+		3C2A5E3C2632C42500B4E2F6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3C2A5E432632CB7700B4E2F6 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		3C2A5E4B2632CBB400B4E2F6 /* SearchFlowFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlowFactoryProtocol.swift; sourceTree = "<group>"; };
+		3C2A5E502632CBD000B4E2F6 /* SearchFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlowFactory.swift; sourceTree = "<group>"; };
+		3C2A5E582632D1B800B4E2F6 /* UIViewController+Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboarded.swift"; sourceTree = "<group>"; };
 		3C8EF7C326244F3B00A8DD24 /* UIApplication+Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Configurations.swift"; sourceTree = "<group>"; };
 		3C8EF7E2262455C700A8DD24 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		3C8EF7EF26245CBF00A8DD24 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -134,6 +160,9 @@
 		3C0076FF25ED33880045A523 /* iTunesDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3C2A5E0C2632BEEE00B4E2F6 /* BaseCoordinator */,
+				3C2A5E2E2632C3B600B4E2F6 /* AppCoordinator */,
+				3C2A5E412632CB0500B4E2F6 /* Flows */,
 				3C9D5D9F25F0CAD500DE4493 /* Extensions */,
 				3CFB231725EFBE9400D9B84E /* Networking */,
 				3C9B979925EE1F78005AA26E /* Models */,
@@ -168,6 +197,46 @@
 			path = iTunesDemoUITests;
 			sourceTree = "<group>";
 		};
+		3C2A5E0C2632BEEE00B4E2F6 /* BaseCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3C2A5E0D2632BF1300B4E2F6 /* Coordinatable.swift */,
+				3C2A5E152632BFE300B4E2F6 /* Presentable.swift */,
+				3C2A5E1A2632C11B00B4E2F6 /* Routable.swift */,
+				3C2A5E1F2632C18C00B4E2F6 /* Router.swift */,
+				3C2A5E242632C24600B4E2F6 /* BaseCoordinator.swift */,
+			);
+			path = BaseCoordinator;
+			sourceTree = "<group>";
+		};
+		3C2A5E2E2632C3B600B4E2F6 /* AppCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3C2A5E3C2632C42500B4E2F6 /* AppCoordinator.swift */,
+				3C2A5E2F2632C3E100B4E2F6 /* CoordinatorsFactoryProtocol.swift */,
+				3C2A5E372632C40900B4E2F6 /* CoordinatorsFactory.swift */,
+			);
+			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
+		3C2A5E412632CB0500B4E2F6 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				3C2A5E422632CB1900B4E2F6 /* SearchFlow */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		3C2A5E422632CB1900B4E2F6 /* SearchFlow */ = {
+			isa = PBXGroup;
+			children = (
+				3C2A5E432632CB7700B4E2F6 /* SearchCoordinator.swift */,
+				3C2A5E4B2632CBB400B4E2F6 /* SearchFlowFactoryProtocol.swift */,
+				3C2A5E502632CBD000B4E2F6 /* SearchFlowFactory.swift */,
+			);
+			path = SearchFlow;
+			sourceTree = "<group>";
+		};
 		3C9B979925EE1F78005AA26E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +259,8 @@
 				3C9D5DA025F0CAF100DE4493 /* UIAlertController+Extensions.swift */,
 				3C9D5DAA25F0F7C200DE4493 /* UIViewController+ShowErrorAlert.swift */,
 				3C8EF7C326244F3B00A8DD24 /* UIApplication+Configurations.swift */,
+				3C2A5E292632C35F00B4E2F6 /* UIViewController+Presentable.swift */,
+				3C2A5E582632D1B800B4E2F6 /* UIViewController+Storyboarded.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -503,16 +574,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CFB231925EFBEAB00D9B84E /* NetworkManager.swift in Sources */,
+				3C2A5E1B2632C11B00B4E2F6 /* Routable.swift in Sources */,
 				3C00770525ED33880045A523 /* SearchViewController.swift in Sources */,
 				3C9D5DAB25F0F7C200DE4493 /* UIViewController+ShowErrorAlert.swift in Sources */,
 				3C00770125ED33880045A523 /* AppDelegate.swift in Sources */,
 				3C9D5DA625F0ED1D00DE4493 /* DetailsViewController.swift in Sources */,
+				3C2A5E4C2632CBB400B4E2F6 /* SearchFlowFactoryProtocol.swift in Sources */,
+				3C2A5E0E2632BF1300B4E2F6 /* Coordinatable.swift in Sources */,
+				3C2A5E592632D1B800B4E2F6 /* UIViewController+Storyboarded.swift in Sources */,
+				3C2A5E382632C40900B4E2F6 /* CoordinatorsFactory.swift in Sources */,
+				3C2A5E202632C18C00B4E2F6 /* Router.swift in Sources */,
 				3C9B97A425EE29DC005AA26E /* ResultCell.swift in Sources */,
+				3C2A5E302632C3E100B4E2F6 /* CoordinatorsFactoryProtocol.swift in Sources */,
 				3C8EF7C426244F3B00A8DD24 /* UIApplication+Configurations.swift in Sources */,
+				3C2A5E3D2632C42500B4E2F6 /* AppCoordinator.swift in Sources */,
+				3C2A5E442632CB7700B4E2F6 /* SearchCoordinator.swift in Sources */,
 				3C9D5DA125F0CAF100DE4493 /* UIAlertController+Extensions.swift in Sources */,
+				3C2A5E2A2632C35F00B4E2F6 /* UIViewController+Presentable.swift in Sources */,
 				3CFB232125EFC98700D9B84E /* ItunesResponse.swift in Sources */,
+				3C2A5E162632BFE300B4E2F6 /* Presentable.swift in Sources */,
 				3C8EF7E3262455C700A8DD24 /* R.generated.swift in Sources */,
 				3C00770325ED33880045A523 /* SceneDelegate.swift in Sources */,
+				3C2A5E252632C24600B4E2F6 /* BaseCoordinator.swift in Sources */,
+				3C2A5E512632CBD000B4E2F6 /* SearchFlowFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
