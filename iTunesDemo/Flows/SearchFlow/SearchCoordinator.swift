@@ -1,3 +1,8 @@
+protocol SearchResultAction {
+    
+    func searchResultDidSelect(_ searchResult: ItunesResult?)
+}
+
 final class SearchCoordinator: BaseCoordinator {
     
     // MARK: - Properties
@@ -17,7 +22,25 @@ final class SearchCoordinator: BaseCoordinator {
 extension SearchCoordinator: Coordinatable {
     
     func start() {
-        let searchVC = factory.makeSearchView()
-        router.push(searchVC)
+        guard let searchVC = factory.makeSearchView() as? SearchViewController else {
+            fatalError("Cannot instantiate SearchViewController")
+        }
+        
+        searchVC.coordinator = self
+        router.push(searchVC, animated: true)
+    }
+}
+
+// MARK: - SearchResultAction
+
+extension SearchCoordinator: SearchResultAction {
+    
+    func searchResultDidSelect(_ searchResult: ItunesResult?) {
+        guard let trackDetailsVC = factory.makeTrackDetailsView() as? DetailsViewController else {
+            fatalError("Cannot instantiate DetailsViewController")
+        }
+        
+        trackDetailsVC.iTunesResult = searchResult
+        router.push(trackDetailsVC, animated: true)
     }
 }

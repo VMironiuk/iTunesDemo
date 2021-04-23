@@ -13,11 +13,11 @@ class SearchViewController: UITableViewController {
     
     private var itunesResponse: ItunesResponse?
     
-    private var selectedItunesResult: ItunesResult?
-    
     private var urlParameters: [String : String] {
         ["media" : "music", "entity" : "song", "term" : "\(searchBar.text ?? "")"]
     }
+    
+    var coordinator: (Coordinatable & SearchResultAction)?
 
     // MARK: - Lifecycle
     
@@ -25,14 +25,7 @@ class SearchViewController: UITableViewController {
         super.viewDidLoad()
         setupSearchBar()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == R.segue.searchViewController.detailsView.identifier {
-            let detailsVC = segue.destination as! DetailsViewController
-            detailsVC.iTunesResult = selectedItunesResult
-        }
-    }
-    
+
     // MARK: - Private
     
     private func setupSearchBar() {
@@ -84,9 +77,8 @@ extension SearchViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        selectedItunesResult = itunesResponse?.results[indexPath.row]
-        performSegue(withIdentifier: R.segue.searchViewController.detailsView.identifier,
-                     sender: self)
+        let selectedItunesResult = itunesResponse?.results[indexPath.row]
+        coordinator?.searchResultDidSelect(selectedItunesResult)
     }
 }
 

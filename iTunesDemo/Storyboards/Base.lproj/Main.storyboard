@@ -78,9 +78,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="VvL-yt-JK0"/>
-                    <connections>
-                        <segue destination="J3D-lK-GVb" kind="show" identifier="DetailsView" id="YD2-Uz-lNd"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUk-Cc-qTA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,34 +86,34 @@
         <!--Details View Controller-->
         <scene sceneID="gf8-mq-vuU">
             <objects>
-                <viewController id="J3D-lK-GVb" customClass="DetailsViewController" customModule="iTunesDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="J3D-lK-GVb" customClass="DetailsViewController" customModule="iTunesDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mge-iI-XZJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5g-DY-mgt">
-                                <rect key="frame" x="20" y="346.5" width="374" height="29"/>
+                                <rect key="frame" x="20" y="409.5" width="374" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxe-U5-0j3">
-                                <rect key="frame" x="20" y="383.5" width="374" height="21.5"/>
+                                <rect key="frame" x="20" y="446.5" width="374" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcq-9e-tpS">
-                                <rect key="frame" x="20" y="413" width="374" height="26.5"/>
+                                <rect key="frame" x="20" y="476" width="374" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kGo-La-iwe">
-                                <rect key="frame" x="20" y="20" width="374" height="294.5"/>
+                                <rect key="frame" x="20" y="64" width="374" height="313.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tuz-0V-Zcr">
-                                <rect key="frame" x="180.5" y="455.5" width="53" height="36"/>
+                                <rect key="frame" x="180.5" y="518.5" width="53" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Listen"/>
                                 <connections>
