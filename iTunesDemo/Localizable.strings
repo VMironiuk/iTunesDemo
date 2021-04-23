@@ -10,6 +10,7 @@
 "DetailsView.Artwork.Loading.Error.Message" = "Cannot download artwork: %@";
 "SearchView.Instantiation.Error.Message" = "Cannot instantiate SearchViewController";
 "DetailsView.Instantiation.Error.Message" = "Cannot instantiate DetailsViewController";
+"ResultCell.Instantiation.Error.Message" = "Cannot instantiate ResultCell";
 
 // MARK: - Custom Info.plist Keys
 

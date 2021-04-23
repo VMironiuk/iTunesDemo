@@ -2,7 +2,7 @@ import UIKit
 import Rswift
 
 extension UIAlertController {
-    
+
     static func errorAlert(with message: String) -> UIAlertController {
         let alert = UIAlertController(title: R.string.localizable.errorTitle(),
                                       message: message,
