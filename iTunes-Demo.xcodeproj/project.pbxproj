@@ -14,18 +14,14 @@
 		3CA361F32674A5C900783902 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA361F22674A5C900783902 /* Assets.xcassets */; };
 		3CA361F62674A5C900783902 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CA361F42674A5C900783902 /* LaunchScreen.storyboard */; };
 		3CA3621C2674B09F00783902 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3621B2674B09F00783902 /* R.generated.swift */; };
+		3CA3624D2674D84600783902 /* RemoteMediaLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3624C2674D84600783902 /* RemoteMediaLoaderTests.swift */; };
+		3CA3624F2674D90900783902 /* MediaLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3624E2674D90900783902 /* MediaLoader.swift */; };
+		3CA362512674D96A00783902 /* RemoteMediaLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA362502674D96A00783902 /* RemoteMediaLoader.swift */; };
 		73B6D74D2CBAEAC309102587 /* Pods_iTunes_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2784E529A34B516AAF4B3D4 /* Pods_iTunes_Demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		3CA361FD2674A5C900783902 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3CA361DE2674A5C700783902 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3CA361E52674A5C700783902;
-			remoteInfo = "iTunes-Demo";
-		};
-		3CA362082674A5C900783902 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3CA361DE2674A5C700783902 /* Project object */;
 			proxyType = 1;
@@ -46,9 +42,10 @@
 		3CA361F72674A5C900783902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CA361FC2674A5C900783902 /* iTunes-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iTunes-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA362022674A5C900783902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3CA362072674A5C900783902 /* iTunes-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iTunes-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CA3620D2674A5C900783902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CA3621B2674B09F00783902 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		3CA3624C2674D84600783902 /* RemoteMediaLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteMediaLoaderTests.swift; sourceTree = "<group>"; };
+		3CA3624E2674D90900783902 /* MediaLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaLoader.swift; sourceTree = "<group>"; };
+		3CA362502674D96A00783902 /* RemoteMediaLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteMediaLoader.swift; sourceTree = "<group>"; };
 		AEF707D312A3D16BD073A91A /* Pods-iTunes-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunes-Demo.release.xcconfig"; path = "Target Support Files/Pods-iTunes-Demo/Pods-iTunes-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		C2784E529A34B516AAF4B3D4 /* Pods_iTunes_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunes_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -69,13 +66,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3CA362042674A5C900783902 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,7 +74,6 @@
 			children = (
 				3CA361E82674A5C700783902 /* iTunes-Demo */,
 				3CA361FF2674A5C900783902 /* iTunes-DemoTests */,
-				3CA3620A2674A5C900783902 /* iTunes-DemoUITests */,
 				3CA361E72674A5C700783902 /* Products */,
 				7B88D0B0FC2C688EB55EA8CB /* Pods */,
 				F049F96D989627B4B40BC9F5 /* Frameworks */,
@@ -96,7 +85,6 @@
 			children = (
 				3CA361E62674A5C700783902 /* iTunes-Demo.app */,
 				3CA361FC2674A5C900783902 /* iTunes-DemoTests.xctest */,
-				3CA362072674A5C900783902 /* iTunes-DemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,8 +92,9 @@
 		3CA361E82674A5C700783902 /* iTunes-Demo */ = {
 			isa = PBXGroup;
 			children = (
-				3CA361E92674A5C700783902 /* AppDelegate.swift */,
-				3CA361EB2674A5C700783902 /* SceneDelegate.swift */,
+				3CA362492674D7DB00783902 /* Application */,
+				3CA3624A2674D80300783902 /* MediaFeature */,
+				3CA3624B2674D81100783902 /* MediaAPI */,
 				3CA361ED2674A5C700783902 /* ViewController.swift */,
 				3CA361EF2674A5C700783902 /* Main.storyboard */,
 				3CA361F22674A5C900783902 /* Assets.xcassets */,
@@ -120,16 +109,34 @@
 			isa = PBXGroup;
 			children = (
 				3CA362022674A5C900783902 /* Info.plist */,
+				3CA3624C2674D84600783902 /* RemoteMediaLoaderTests.swift */,
 			);
 			path = "iTunes-DemoTests";
 			sourceTree = "<group>";
 		};
-		3CA3620A2674A5C900783902 /* iTunes-DemoUITests */ = {
+		3CA362492674D7DB00783902 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				3CA3620D2674A5C900783902 /* Info.plist */,
+				3CA361E92674A5C700783902 /* AppDelegate.swift */,
+				3CA361EB2674A5C700783902 /* SceneDelegate.swift */,
 			);
-			path = "iTunes-DemoUITests";
+			path = Application;
+			sourceTree = "<group>";
+		};
+		3CA3624A2674D80300783902 /* MediaFeature */ = {
+			isa = PBXGroup;
+			children = (
+				3CA3624E2674D90900783902 /* MediaLoader.swift */,
+			);
+			path = MediaFeature;
+			sourceTree = "<group>";
+		};
+		3CA3624B2674D81100783902 /* MediaAPI */ = {
+			isa = PBXGroup;
+			children = (
+				3CA362502674D96A00783902 /* RemoteMediaLoader.swift */,
+			);
+			path = MediaAPI;
 			sourceTree = "<group>";
 		};
 		7B88D0B0FC2C688EB55EA8CB /* Pods */ = {
@@ -191,24 +198,6 @@
 			productReference = 3CA361FC2674A5C900783902 /* iTunes-DemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3CA362062674A5C900783902 /* iTunes-DemoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3CA362162674A5C900783902 /* Build configuration list for PBXNativeTarget "iTunes-DemoUITests" */;
-			buildPhases = (
-				3CA362032674A5C900783902 /* Sources */,
-				3CA362042674A5C900783902 /* Frameworks */,
-				3CA362052674A5C900783902 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3CA362092674A5C900783902 /* PBXTargetDependency */,
-			);
-			name = "iTunes-DemoUITests";
-			productName = "iTunes-DemoUITests";
-			productReference = 3CA362072674A5C900783902 /* iTunes-DemoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -223,10 +212,7 @@
 					};
 					3CA361FB2674A5C900783902 = {
 						CreatedOnToolsVersion = 12.5;
-						TestTargetID = 3CA361E52674A5C700783902;
-					};
-					3CA362062674A5C900783902 = {
-						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 						TestTargetID = 3CA361E52674A5C700783902;
 					};
 				};
@@ -246,7 +232,6 @@
 			targets = (
 				3CA361E52674A5C700783902 /* iTunes-Demo */,
 				3CA361FB2674A5C900783902 /* iTunes-DemoTests */,
-				3CA362062674A5C900783902 /* iTunes-DemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -263,13 +248,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3CA361FA2674A5C900783902 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3CA362052674A5C900783902 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -365,6 +343,8 @@
 			files = (
 				3CA361EE2674A5C700783902 /* ViewController.swift in Sources */,
 				3CA361EA2674A5C700783902 /* AppDelegate.swift in Sources */,
+				3CA3624F2674D90900783902 /* MediaLoader.swift in Sources */,
+				3CA362512674D96A00783902 /* RemoteMediaLoader.swift in Sources */,
 				3CA361EC2674A5C700783902 /* SceneDelegate.swift in Sources */,
 				3CA3621C2674B09F00783902 /* R.generated.swift in Sources */,
 			);
@@ -374,13 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3CA362032674A5C900783902 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				3CA3624D2674D84600783902 /* RemoteMediaLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,11 +365,6 @@
 			isa = PBXTargetDependency;
 			target = 3CA361E52674A5C700783902 /* iTunes-Demo */;
 			targetProxy = 3CA361FD2674A5C900783902 /* PBXContainerItemProxy */;
-		};
-		3CA362092674A5C900783902 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3CA361E52674A5C700783902 /* iTunes-Demo */;
-			targetProxy = 3CA362082674A5C900783902 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -580,6 +549,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8U849676MP;
 				INFOPLIST_FILE = "iTunes-DemoTests/Info.plist";
@@ -591,6 +561,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vladimironiuk.iTunes-DemoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iTunes-Demo.app/iTunes-Demo";
@@ -602,6 +573,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8U849676MP;
 				INFOPLIST_FILE = "iTunes-DemoTests/Info.plist";
@@ -616,46 +588,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iTunes-Demo.app/iTunes-Demo";
-			};
-			name = Release;
-		};
-		3CA362172674A5C900783902 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8U849676MP;
-				INFOPLIST_FILE = "iTunes-DemoUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vladimironiuk.iTunes-DemoUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "iTunes-Demo";
-			};
-			name = Debug;
-		};
-		3CA362182674A5C900783902 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8U849676MP;
-				INFOPLIST_FILE = "iTunes-DemoUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vladimironiuk.iTunes-DemoUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "iTunes-Demo";
 			};
 			name = Release;
 		};
@@ -685,15 +617,6 @@
 			buildConfigurations = (
 				3CA362142674A5C900783902 /* Debug */,
 				3CA362152674A5C900783902 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3CA362162674A5C900783902 /* Build configuration list for PBXNativeTarget "iTunes-DemoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3CA362172674A5C900783902 /* Debug */,
-				3CA362182674A5C900783902 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
