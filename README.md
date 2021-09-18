@@ -117,3 +117,7 @@ Given the customer has no connectivity
    ]
 }
 ```
+
+## HTTP Client's Representable States
+
+![HTTP Client Representable States](http_client_representable_states.png)
