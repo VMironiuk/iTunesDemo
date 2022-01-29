@@ -74,9 +74,9 @@ Given the customer has no connectivity
 | `trackName`               | `String`            |
 | `artistName`              | `String`            |
 | `collectionName`          | `String`            |
-| `artworkUrl100`	          | `String` (optional) |
-| `artworkUrl60`	          | `String` (optional) |
-| `previewURL`	             | `String` (optional) |
+| `artworkUrl100`	          | `URL` (optional)    |
+| `artworkUrl60`	          | `URL` (optional)    |
+| `previewURL`	             | `URL`               |
 
 ## Payload contract (example for `https://itunes.apple.com/search?term=jack+johnson`)
 ```
