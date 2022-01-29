@@ -1,23 +1,23 @@
-# iTunes Media Preview App - List of iTunes Media Items Feature
+# iTunes Tracks Preview App - List of iTunes Tracks Feature
 
 ## BDD Specs 
 
-### Story: Customer requests list of media items by a term from iTunes
+### Story: Customer requests list of tracks by a term from iTunes
 
 ### Narrative #1
 
 ```
 As an online customer
-I want the app to show a list of requested by a term media items from iTunes
-So I can choose an item to preview its media content on a separate screen
+I want the app to show a list of requested by a term tracks from iTunes
+So I can choose a track to preview it on a separate screen
 ```
 
 #### Scenarios (Acceptance criteria)
 
 ```
 Given the customer has connectivity
- When the customer requests a list of media items by a term
- Then the app should display a list of requested media items from iTunes 
+ When the customer requests a list of tracks by a term
+ Then the app should display a list of requested tracks from iTunes 
 ```
 
 ### Narrative #2
@@ -25,31 +25,31 @@ Given the customer has connectivity
 ```
 As an offline customer
 I want the app to show the error message
-So I will know that I need connectivity to see requested media items from iTunes 
+So I will know that I need connectivity to see requested tracks from iTunes 
 ```
 
 #### Scenarios (Acceptance criteria)
 
 ```
 Given the customer has no connectivity
- When th customer requests a media
+ When th customer requests tracks
  Then the app should display an error message
 ```
 
 ## Use Cases
 
-### Load Media Items by a Term Use Case
+### Load Tracks by a Term Use Case
 
 #### Data
 
 * URL
 
 #### Primary course (happy path):
-1. Execute "Load Media Items" command with above data
+1. Execute "Load Tracks" command with above data
 2. System downloads data from the URL
 3. System validates downloaded data
-4. System creates a list of media items from valid data
-5. System delivers a list of media items
+4. System creates a list of tracks from valid data
+5. System delivers a list of tracks
 
 #### Invalid data - error course (sad path):
 1. System delivers invalid data error
@@ -67,7 +67,7 @@ Given the customer has no connectivity
 
 ## Model Specs
 
-### Media Item
+### Track Item
 
 | Property                  | Type                |
 |---------------------------|---------------------|
