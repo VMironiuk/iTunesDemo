@@ -1,24 +1,22 @@
-[![Build Status](https://travis-ci.com/VMironiuk/iTunesDemo.svg?branch=development)](https://travis-ci.com/VMironiuk/iTunesDemo)
+# iTunes Media Preview App - List of iTunes Media Items Feature
 
-# A simple application to preview iTunes media.
+## BDD Specs 
 
-## Preview iTunes Media Feature Specs 
-
-### Story: Customer requests media from iTunes to preview
+### Story: Customer requests list of media items by a term from iTunes
 
 ### Narrative #1
 
 ```
 As an online customer
-I want the app to show a list of requested media items from iTunes
-So I can choose an item to preview its media on a separate screen
+I want the app to show a list of requested by a term media items from iTunes
+So I can choose an item to preview its media content on a separate screen
 ```
 
 #### Scenarios (Acceptance criteria)
 
 ```
 Given the customer has connectivity
- When the customer requests a media
+ When the customer requests a list of media items by a term
  Then the app should display a list of requested media items from iTunes 
 ```
 
@@ -40,7 +38,7 @@ Given the customer has no connectivity
 
 ## Use Cases
 
-### Load Media Items from iTunes Use Case
+### Load Media Items by a Term Use Case
 
 #### Data
 
@@ -61,7 +59,11 @@ Given the customer has no connectivity
 
 ## Flowchart
 
-![Preview iTunes Media Feature Specs](flowchart.png)
+![List of iTunes Media Items Feature](flowchart.png)
+
+## Architecture
+
+![List of iTunes Media Items Feature](Architecture.png)
 
 ## Model Specs
 
@@ -72,9 +74,9 @@ Given the customer has no connectivity
 | `trackName`               | `String`            |
 | `artistName`              | `String`            |
 | `collectionName`          | `String`            |
-| `artworkUrl100`	        | `String` (optional) |
-| `artworkUrl60`	        | `String` (optional) |
-| `previewURL`	            | `String` (optional) |
+| `artworkUrl100`	          | `String` (optional) |
+| `artworkUrl60`	          | `String` (optional) |
+| `previewURL`	             | `String` (optional) |
 
 ## Payload contract (example for `https://itunes.apple.com/search?term=jack+johnson`)
 ```
