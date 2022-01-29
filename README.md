@@ -80,6 +80,10 @@ Given the customer has no connectivity
 
 ## Payload contract (example for `https://itunes.apple.com/search?term=jack+johnson`)
 ```
+GET https://itunes.apple.com/search?term=*term*
+
+200 RESPONSE
+
 {
    "resultCount":1,
    "results":[
