@@ -67,7 +67,7 @@ Given the customer has no connectivity
 
 ## Model Specs
 
-### Track Item
+### Media Item
 
 | Property                  | Type                |
 |---------------------------|---------------------|
